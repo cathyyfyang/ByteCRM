@@ -5,11 +5,14 @@ import ContactMain from '../Contact/ContactMain';
 import CompanyList from '../Company/CompanyList';
 import Logout from '../Log/RegForm/Register';
 import RegForm from '../Log/RegForm/Register';
+import LoginForm from '../Log/LoginForm/Login';
+
 
 
 const Routes = () => (
    <Switch>
-         <Redirect exact from="/" to ="/register" />
+        <Redirect exact from="/" to ="/register" />
+        <Route exact path="/login" component={LoginForm} />
         <Route exact path="/contacts" component={ContactList} />
         <Route exact path="/contacts/main" component={ContactMain} />
         <Route exact path="/companies" component={CompanyList} />

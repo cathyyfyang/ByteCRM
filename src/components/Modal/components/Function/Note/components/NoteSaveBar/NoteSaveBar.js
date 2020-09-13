@@ -1,5 +1,5 @@
 import React from 'react';
-import ContainedButton from '../../../../../../Style/Button/ContainedButton';
+import ContainedButton from '../../../../../../Modal/components/Function/Note/components/NoteSaveBar';
 import Taskfollow from '../../../../../../Style/CheckBox';
 import "./NoteSaveBar.scss"
 

@@ -1,10 +1,22 @@
 import React from 'react';
 import "./AboutCompany.scss";
+import ContactDetail from "./components/ContactDetail";
+
+const contactList=[
+    {key:"Name",value:"Hubspot"},
+    {key:"Company Domain Name",value:"hubspot.com"}
+]
 
 const AboutCompany = () => (
   <div className="about_company">
   <h3> About this company</h3>
-  <div className="companyname_box">
+  {contactList.map((item)=>(
+         <ContactDetail
+           title={item.key}
+           value={item.value}
+         />
+  ))}
+  {/* <div className="companyname_box">
       <div className="key_name"> Name </div>
       <div className="value_name"> HubSpot, Inc. </div>
   </div>
@@ -59,7 +71,7 @@ const AboutCompany = () => (
   <div className="linkedin_box">
       <div className="key_name"> LinkedIn company page </div>
       <div className="value_name">  https://www.linkedin.com/company/hubspot </div>
-  </div>
+  </div> */}
   <button className="view-all-properties">View all properties </button>
   <button className="view-property-history">View property history </button>
 </div>

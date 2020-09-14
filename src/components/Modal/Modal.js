@@ -43,6 +43,7 @@ class Modal extends Component {
 
 
     render() {
+        const dragHandlers = {onStart: this.onStart, onStop: this.onStop};
         const { hide, visibleStatus } = this.state;
         let className="MainComponents";
         if(!hide){
@@ -50,19 +51,20 @@ class Modal extends Component {
         }
 
         return (
-            <Draggable
+            <Draggable 
+                handle="strong" {...dragHandlers}
                 defaultPosition={{ x: this.props.Xaxis, y: this.props.Yaxis }}
             >
                 {this.props.visible ?
                     <div ref={this.modal} className="Modal Component--acitve">
-                        <div className="Header">
+                       <strong>
                             <Header
                                 name={this.props.currentModal.key}
                                 hide={this.state.hide}
                                 handleCloseButton={this.handleCloseButton}
                                 handleHideButton={this.handleHideButton}
                             />
-                        </div>
+                       </strong>
                         {hide ?
                             <div className="MainComponents" />
                             :

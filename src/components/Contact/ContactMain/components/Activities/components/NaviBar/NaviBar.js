@@ -10,6 +10,7 @@ import Box from '@material-ui/core/Box';
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
+  
 
   return (
     <div
@@ -57,6 +58,15 @@ export default function NaviBar() {
     setValue(newValue);
   };
 
+  const tabBarItems=[
+    {key:0,value:"Activity",page:(<div>Activity</div>)},
+    {key:1,value:"Notes",page:(<div>Notes</div>)},
+    {key:2,value:"Emails",page:(<div>Emails</div>)},
+    {key:3,value:"Calls",page:(<div>Calls</div>)},
+    {key:4,value:"Tasks",page:(<div>Tasks</div>)},
+    {key:5,value:"Meetings",page:(<div>Meetings</div>)},
+  ]
+
   return (
     <div className={classes.root}>
       <AppBar position="static" color="default">
@@ -69,30 +79,16 @@ export default function NaviBar() {
           scrollButtons="auto"
           aria-label="scrollable auto tabs example"
         >
-          <Tab label="Activity" {...a11yProps(0)} />
-          <Tab label="Notes" {...a11yProps(1)} />
-          <Tab label="Emails" {...a11yProps(2)} />
-          <Tab label="Calls" {...a11yProps(3)} />
-          <Tab label="Meetings" {...a11yProps(4)} />
-          <Tab label="6" {...a11yProps(5)} />
-          <Tab label="7" {...a11yProps(6)} />
+          {tabBarItems.map((item)=>(
+            <Tab label= {item.value} {...a11yProps(item.key)}/>
+          ))}
         </Tabs>
       </AppBar>
-      <TabPanel value={value} index={0}>
-    
-      </TabPanel>
-      <TabPanel value={value} index={1}>
-      </TabPanel>
-      <TabPanel value={value} index={2}>
-      </TabPanel>
-      <TabPanel value={value} index={3}>
-      </TabPanel>
-      <TabPanel value={value} index={4}>
-          </TabPanel>
-      <TabPanel value={value} index={5}>
-      </TabPanel>
-      <TabPanel value={value} index={6}>
-      </TabPanel>
+      {tabBarItems.map((item)=>(
+            <TabPanel value={value} index={item.key}>
+              {item.page}
+            </TabPanel> 
+          ))}
     </div>
   );
 }

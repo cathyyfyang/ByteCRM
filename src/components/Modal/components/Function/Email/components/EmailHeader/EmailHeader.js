@@ -32,6 +32,7 @@ class EmailHeader extends React.Component {
                     <HeaderItem
                         value={"To"}
                         borderBottom={false}
+                        extraMargin={true}
                     >
                         <ReceiverTag>John  Wick</ReceiverTag>
                         <ReceiverTag>John 111111  Wick</ReceiverTag>
@@ -40,6 +41,7 @@ class EmailHeader extends React.Component {
                         <HeaderItem
                             value={"Cc"}
                             borderBottom={false}
+                            extraMargin={true}
                         >
                             <ReceiverTag>John  Wick</ReceiverTag>
                             <ReceiverTag>John 111111  Wick</ReceiverTag>
@@ -50,6 +52,7 @@ class EmailHeader extends React.Component {
                     <HeaderItem
                         value={"From"}
                         borderBottom={true}
+                        extraMargin={true}
                     >
                         <div className="item-content__left">
                             <span>abc</span>
@@ -74,7 +77,7 @@ class EmailHeader extends React.Component {
                         borderBottom={true}
                     >
                         <div className="item-content subject">
-                            <span>abc</span>
+                            <input className='subject__input'/>
                         </div>
                     </HeaderItem>
                 </div>

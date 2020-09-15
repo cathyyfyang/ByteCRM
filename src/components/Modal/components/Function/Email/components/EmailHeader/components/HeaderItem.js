@@ -7,16 +7,18 @@ const HeaderItems = ({
     children,
     borderBottom,
     value,
-    extraMargin,
+    extraClassName
 }) => {
     let className = "emailHeader__main__item ";
+
+    if(extraClassName != undefined){
+        className += extraClassName;
+    }
+
     if (borderBottom) {
         className += " border-bottom";
     }
-    if (extraMargin) {
-        className += " extraMargin";
-    }
-    
+
     return (
         <div className={className}>
             <div className={"title"}>

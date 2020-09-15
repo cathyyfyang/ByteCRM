@@ -16,7 +16,7 @@
         
         &__item{
             display: flex;
-            //margin:0% auto;
+            margin:3% auto;
            
             &__right{
                 flex:12;
@@ -62,11 +62,11 @@
 }
 
 
-.extraMargin{
-  margin:3% auto;
-}
+
 
 .subject{
+    margin: 3% auto;
+    margin-bottom: 0%;
     &__input{
         border:none;
         

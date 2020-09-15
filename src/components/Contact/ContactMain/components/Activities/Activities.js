@@ -2,15 +2,16 @@ import React, { Fragment } from 'react';
 import Container from '@material-ui/core/Container';
 
 import TabBar from './components/TabBar';
-import './Activities.scss'
+import './Activities.scss';
+import NotesTimeLine from './components/Functions/Note/NotesTimeLine';
 
 
 class Activities extends React.Component {
     constructor(props) {
         super(props);
         const tabItems = [
-            { key: 'Activity', value: 'Activity', activity: (<div>Activity</div>) },
-            { key: 'Notes', value: 'Notes', activity: (<div>Notes</div>) },
+            { key: 'Activity', value: 'Activity', activity: (<div><NotesTimeLine /></div>) },
+            { key: 'Notes', value: 'Notes', activity: (<div>Notestest</div>) },
             { key: 'Emails', value: 'Emails', activity: (<div>Emails</div>) },
             { key: 'Calls', value: 'Calls', activity: (<div>Calls</div>) },
             { key: 'Tasks', value: 'Tasks', activity: (<div>Tasks</div>) },

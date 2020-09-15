@@ -29,6 +29,10 @@
             align-self: center;
             background-color: transparent;
             cursor: pointer;
+
+            &:hover{
+                //background-color:black;
+            }
    
             &__img{
                height:8px;

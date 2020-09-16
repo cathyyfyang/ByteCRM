@@ -52,6 +52,7 @@ class Form extends React.Component {
       errors['password'] = 'Please enter your password.';
     }
 
+<<<<<<< HEAD
     if (!input['email']) {
       isValid = false;
       errors['email'] = 'Please enter your email Address.';
@@ -67,6 +68,31 @@ class Form extends React.Component {
       }
     }
 
+=======
+>>>>>>> f814f6f... fix login validation and update call activity
+    if (!input['email']) {
+      isValid = false;
+      errors['email'] = 'Please enter your email Address.';
+    }
+
+    if (typeof input['email'] !== 'undefined') {
+      var pattern = new RegExp(
+        /^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/i
+      );
+      if (!pattern.test(input['email'])) {
+        isValid = false;
+        errors['email'] = 'Please enter valid email address.';
+      }
+    }
+
+<<<<<<< HEAD
+    if (!input['password']) {
+      isValid = false;
+      errors['password'] = 'Please enter your password.';
+    }
+
+=======
+>>>>>>> f814f6f... fix login validation and update call activity
     this.setState({
       errors: errors,
     });
@@ -87,6 +113,10 @@ class Form extends React.Component {
             placeholder="Enter your email address..."
             name="email"
             type="text"
+<<<<<<< HEAD
+            
+=======
+>>>>>>> f814f6f... fix login validation and update call activity
             value={this.state.input.email}
             onChange={this.handleChange}
           />

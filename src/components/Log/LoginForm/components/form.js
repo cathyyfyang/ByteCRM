@@ -39,11 +39,7 @@ class Form extends React.Component {
       input['password'] = '';
       this.setState({ input: input });
 
-<<<<<<< Updated upstream
-      // alert('Form is submited');
-=======
       alert('Form is submited');
->>>>>>> Stashed changes
     }
   }
   validate() {
@@ -51,7 +47,6 @@ class Form extends React.Component {
     let errors = {};
     let isValid = true;
 
-<<<<<<< Updated upstream
     if (!input['password']) {
       isValid = false;
       errors['password'] = 'Please enter your password.';
@@ -72,7 +67,6 @@ class Form extends React.Component {
       }
     }
 
-=======
     if (!input['email']) {
       isValid = false;
       errors['email'] = 'Please enter your email Address.';
@@ -92,7 +86,7 @@ class Form extends React.Component {
       isValid = false;
       errors['password'] = 'Please enter your password.';
     }
->>>>>>> Stashed changes
+
     this.setState({
       errors: errors,
     });
@@ -112,11 +106,8 @@ class Form extends React.Component {
             id="email"
             placeholder="Enter your email address..."
             name="email"
-<<<<<<< Updated upstream
             type="text"
-=======
             type="email"
->>>>>>> Stashed changes
             value={this.state.input.email}
             onChange={this.handleChange}
           />

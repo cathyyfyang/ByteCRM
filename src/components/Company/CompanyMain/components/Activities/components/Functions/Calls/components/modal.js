@@ -11,11 +11,8 @@ import Contacted from './contacted';
 import CallOutcome from './selection';
 import Calendar from './calendar';
 import TimePicker from './time';
-<<<<<<< Updated upstream:src/components/Company/CompanyMain/components/Activities/components/Functions/Calls/components/modal.js
+
 import ClosingIcon from '../../../../../../../../../img/logsys/closeIcon.svg';
-=======
-import CloseIcon from '../../../../../../../../../img/logsys/closeIcon.svg';
->>>>>>> Stashed changes:src/components/Log/Calls/components/modal.js
 
 function PaperComponent(props) {
   return (

@@ -52,7 +52,6 @@ class Form extends React.Component {
       errors['password'] = 'Please enter your password.';
     }
 
-<<<<<<< HEAD
     if (!input['email']) {
       isValid = false;
       errors['email'] = 'Please enter your email Address.';
@@ -68,8 +67,6 @@ class Form extends React.Component {
       }
     }
 
-=======
->>>>>>> f814f6f... fix login validation and update call activity
     if (!input['email']) {
       isValid = false;
       errors['email'] = 'Please enter your email Address.';
@@ -85,14 +82,11 @@ class Form extends React.Component {
       }
     }
 
-<<<<<<< HEAD
     if (!input['password']) {
       isValid = false;
       errors['password'] = 'Please enter your password.';
     }
 
-=======
->>>>>>> f814f6f... fix login validation and update call activity
     this.setState({
       errors: errors,
     });
@@ -113,10 +107,6 @@ class Form extends React.Component {
             placeholder="Enter your email address..."
             name="email"
             type="text"
-<<<<<<< HEAD
-            
-=======
->>>>>>> f814f6f... fix login validation and update call activity
             value={this.state.input.email}
             onChange={this.handleChange}
           />

@@ -39,7 +39,7 @@ class Form extends React.Component {
       input['password'] = '';
       this.setState({ input: input });
 
-      // alert('Form is submited');
+      alert('Form is submited');
     }
   }
   validate() {
@@ -107,6 +107,7 @@ class Form extends React.Component {
             placeholder="Enter your email address..."
             name="email"
             type="text"
+            type="email"
             value={this.state.input.email}
             onChange={this.handleChange}
           />

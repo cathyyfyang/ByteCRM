@@ -11,6 +11,7 @@ import Contacted from './contacted';
 import CallOutcome from './selection';
 import Calendar from './calendar';
 import TimePicker from './time';
+
 import ClosingIcon from '../../../../../../../../../img/logsys/closeIcon.svg';
 
 function PaperComponent(props) {

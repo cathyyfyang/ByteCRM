@@ -11,7 +11,7 @@ import Contacted from './contacted';
 import CallOutcome from './selection';
 import Calendar from './calendar';
 import TimePicker from './time';
-import CloseIcon from '../../../../../../../../../img/logsys/closeIcon.svg';
+import ClosingIcon from '../../../../../../../../../img/logsys/closeIcon.svg';
 
 function PaperComponent(props) {
   return (
@@ -93,8 +93,8 @@ function DraggableDialog({ classes }) {
         <DialogTitle style={{ cursor: 'move' }} id="draggable-dialog-title">
           Log Call
           <img
-            className="closeIcon"
-            src={CloseIcon}
+            className="closingIcon"
+            src={ClosingIcon}
             alt=""
             onClick={handleClose}
           />

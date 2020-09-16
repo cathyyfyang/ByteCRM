@@ -39,7 +39,11 @@ class Form extends React.Component {
       input['password'] = '';
       this.setState({ input: input });
 
+<<<<<<< Updated upstream
       // alert('Form is submited');
+=======
+      alert('Form is submited');
+>>>>>>> Stashed changes
     }
   }
   validate() {
@@ -47,6 +51,7 @@ class Form extends React.Component {
     let errors = {};
     let isValid = true;
 
+<<<<<<< Updated upstream
     if (!input['password']) {
       isValid = false;
       errors['password'] = 'Please enter your password.';
@@ -67,6 +72,27 @@ class Form extends React.Component {
       }
     }
 
+=======
+    if (!input['email']) {
+      isValid = false;
+      errors['email'] = 'Please enter your email Address.';
+    }
+
+    if (typeof input['email'] !== 'undefined') {
+      var pattern = new RegExp(
+        /^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/i
+      );
+      if (!pattern.test(input['email'])) {
+        isValid = false;
+        errors['email'] = 'Please enter valid email address.';
+      }
+    }
+
+    if (!input['password']) {
+      isValid = false;
+      errors['password'] = 'Please enter your password.';
+    }
+>>>>>>> Stashed changes
     this.setState({
       errors: errors,
     });
@@ -86,7 +112,11 @@ class Form extends React.Component {
             id="email"
             placeholder="Enter your email address..."
             name="email"
+<<<<<<< Updated upstream
             type="text"
+=======
+            type="email"
+>>>>>>> Stashed changes
             value={this.state.input.email}
             onChange={this.handleChange}
           />

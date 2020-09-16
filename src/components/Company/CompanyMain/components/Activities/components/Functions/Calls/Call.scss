@@ -3,6 +3,40 @@ $call-myFont: 'Varela Round', sans-serif;
 $callsColor: #516f90;
 $textColor: #0091ae;
 
+.phoneCall-btn {
+  color: #fff;
+  font-size: 13px;
+  font-family: $call-myFont;
+  top: -2rem;
+  margin-left: 32rem;
+  border-color: #425b76;
+  background-color: #425b76;
+  width: 8rem;
+  height: 2rem;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  position: relative;
+}
+
+.phoneCall-btn:hover {
+  background-color: #516f90;
+}
+
+.learnMore-para {
+  color: $textColor;
+  font-family: $call-myFont;
+}
+
+.learnMore-para > a {
+  text-decoration: none;
+  color: $textColor;
+  font: {
+    family: $call-myFont;
+    weight: 600;
+  }
+}
+
 #draggable-dialog-title {
   font-family: $call-myFont;
   background-color: $callsColor;

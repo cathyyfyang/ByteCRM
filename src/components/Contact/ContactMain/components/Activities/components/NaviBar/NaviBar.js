@@ -6,7 +6,7 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
-
+import CallFn from '../../../../../../Company/CompanyMain/components/Activities/components/Functions/Calls/Call';
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -78,21 +78,15 @@ export default function NaviBar() {
           <Tab label="7" {...a11yProps(6)} />
         </Tabs>
       </AppBar>
-      <TabPanel value={value} index={0}>
-    
-      </TabPanel>
-      <TabPanel value={value} index={1}>
-      </TabPanel>
-      <TabPanel value={value} index={2}>
-      </TabPanel>
+      <TabPanel value={value} index={0}></TabPanel>
+      <TabPanel value={value} index={1}></TabPanel>
+      <TabPanel value={value} index={2}></TabPanel>
       <TabPanel value={value} index={3}>
+        <CallFn />
       </TabPanel>
-      <TabPanel value={value} index={4}>
-          </TabPanel>
-      <TabPanel value={value} index={5}>
-      </TabPanel>
-      <TabPanel value={value} index={6}>
-      </TabPanel>
+      <TabPanel value={value} index={4}></TabPanel>
+      <TabPanel value={value} index={5}></TabPanel>
+      <TabPanel value={value} index={6}></TabPanel>
     </div>
   );
 }

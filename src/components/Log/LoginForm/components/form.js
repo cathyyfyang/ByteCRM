@@ -39,13 +39,18 @@ class Form extends React.Component {
       input['password'] = '';
       this.setState({ input: input });
 
-      alert('Form is submited');
+      // alert('Form is submited');
     }
   }
   validate() {
     let input = this.state.input;
     let errors = {};
     let isValid = true;
+
+    if (!input['password']) {
+      isValid = false;
+      errors['password'] = 'Please enter your password.';
+    }
 
     if (!input['email']) {
       isValid = false;
@@ -62,10 +67,6 @@ class Form extends React.Component {
       }
     }
 
-    if (!input['password']) {
-      isValid = false;
-      errors['password'] = 'Please enter your password.';
-    }
     this.setState({
       errors: errors,
     });
@@ -85,7 +86,7 @@ class Form extends React.Component {
             id="email"
             placeholder="Enter your email address..."
             name="email"
-            type="email"
+            type="text"
             value={this.state.input.email}
             onChange={this.handleChange}
           />

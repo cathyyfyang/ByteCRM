@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import CreateButton from '../../../../../Style/Button/Activities/CreateButton';
 import LogButton from '../../../../../Style/Button/Activities/LogButton';
 import MeetingCreateModal from '../../../../../Modal/components/Function/Meeting/MeetingCreateModal';
-import MeetingLogModal from '../../../../../../Contact/Context/Meeting/MeetingLogModal';
+import MeetingLogModal from '../../../../../Modal/components/Function/Meeting/MeetingLogModal';
 import {ModalContext} from '../../../../../Modal/components/ModalContext';
 import {meetingHeader} from "./MeetingPageHeader.scss";
 import Modal from '../../../../../../js/Modal';

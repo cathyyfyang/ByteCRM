@@ -1,7 +1,7 @@
 import React from 'react';
 import MeetingCards from './components/MeetingCards/MeetingCards';
 import MeetingPageHeader from './components/Header/MeetingPageHeader';
-import shuffleCards from '../../../../services/shuffleCards';
+import shuffleCards from '../../../services/shuffleCards';
 import "./MeetingPage.scss";
 
 

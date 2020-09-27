@@ -1,7 +1,7 @@
 import React from 'react';
 import CreateMeetingCard from './components/CreateMeetingCard';
 import LogMeetingCard from './components/LogMeetingCard';
-import CardContainer from '../../../../../../Style/Card/Activity/Container';
+import CardContainer from '../../../../../Style/Card/Activity/Container';
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import "./MeetingCards.scss";
 

@@ -1,8 +1,8 @@
 import React from 'react';
 import TimeLineControls from './components/TimeLineControls';
 import NoteCardsList from './components/NoteCardsList';
-import shuffleCards from '../../../../services/shuffleCards';
-import { EditorContext } from '../../../../Style/EditableText/Context';
+import shuffleCards from '../../../services/shuffleCards';
+import { EditorContext } from '../../../Style/EditableText/Context';
 import "./NotesTimeLine.scss";
 
 class NotesTimeLine extends React.Component {

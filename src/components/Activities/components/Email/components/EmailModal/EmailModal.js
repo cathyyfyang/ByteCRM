@@ -1,7 +1,6 @@
 import React from 'react';
 import "./EmailModal.scss";
 import EmailFunctionBar from "./components/EmailFunctionBar";
-import Text from '../../../../Style/Text';
 import EmailHeader from './components/EmailHeader';
 import EmailInput from './components/EmailInput';
 import EmailSendBar from './components/EmailSend';

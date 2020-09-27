@@ -1,5 +1,6 @@
 import React from 'react';
-import closeIcon from '../../../../../../../../../img/Modal/Email/closeIcon.png';
+import {faTimes} from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './ReceiverTag.scss'
 
 
@@ -19,8 +20,7 @@ const ReceiverTag = ({
                     onClick();
                 }}
             >
-                <img className="receiverContainer__right__closeButton__img"
-                    src={closeIcon} alt="close" />
+               <FontAwesomeIcon className = "closeIcon" icon = {faTimes}/>
             </button>
         </div>
     </div>

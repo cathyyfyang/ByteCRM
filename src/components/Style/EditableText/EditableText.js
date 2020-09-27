@@ -95,7 +95,8 @@ class EditableText extends React.Component {
       <div>
         <div className="editingmode-editor">
           <Editor content={content}
-            handleEditorChange={this.handleEditorChange}
+                  handleEditorChange={this.handleEditorChange}
+                  placeholder = {this.props.placeholder}
           />
         </div>
         <div className="editingmode-editor-actions">

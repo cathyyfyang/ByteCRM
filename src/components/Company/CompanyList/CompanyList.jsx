@@ -1,21 +1,18 @@
 import React, { Component } from "react";
 import "./CompanyList.scss";
-import PageWrapper from "../../../pages/ListPage/components/PageWrapper";
+import ListPage from "./components/listPage";
+
 
 
 const tabs = [
   {
     id: 1,
-    label: "All companies",
+    label: "All Companies",
   },
   {
     id: 2,
-    label: "My companies",
+    label: "My Companies",
   },
-  {
-    id: 3,
-    label: "Unassigned companies"
-  }
 ];
 
 
@@ -23,7 +20,7 @@ class CompanyList extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      userAccount: "Zoe Joey",
+      userAccount: "James",
     };
   }
 
@@ -31,7 +28,7 @@ class CompanyList extends Component {
     return (
       <div className="root" key={'wrapper'}>
         <h1>Companies</h1>
-        <PageWrapper tabs={tabs} userAccount={this.state.userAccount} type={'company'}/>
+        <ListPage tabs={tabs} userAccount={this.state.userAccount} />
       </div>
     );
   }

@@ -1,19 +1,19 @@
 import ListItem from './ListItem';
 
-function FormatList(contactList){
+function FormatList(userList){
     let formatedList = []
-    for(let i in contactList){
-        const listItem = new ListItem(contactList[i],true);
+    for(let i in userList){
+        const listItem = new ListItem(userList[i],true);
         formatedList.push(listItem);   
     }
     return formatedList;
 }
 
-function SearchContactLocal(contactList,textInput){
+function SearchContactLocal(userList,textInput){
     let searchList = [];
-    for(let i in contactList){
-        if (contactList[i].fullName.toUpperCase().includes(textInput)||contactList[i].email.toUpperCase().includes(textInput) ){
-                const listItem = new ListItem(contactList[i],true)
+    for(let i in userList){
+        if (userList[i].fullName.toUpperCase().includes(textInput)||userList[i].email.toUpperCase().includes(textInput) ){
+                const listItem = new ListItem(userList[i],true)
                 searchList.push(listItem);
         }
     }
@@ -43,7 +43,7 @@ function ItemSelected(selectList,id,checked){
     return newList
 }
 
-function CheckOneContact(contactList,searchList){
+function CheckOneContact(userList,searchList){
     let checkedCounter = 0;
     let contactId = "";
     for (let i in searchList){
@@ -52,10 +52,10 @@ function CheckOneContact(contactList,searchList){
             contactId = searchList[i].contact.id
         }
     }
-    if(checkedCounter === 1 && contactList.length > 1){
+    if(checkedCounter === 1 && userList.length > 1){
         return false
     }
-    else if(checkedCounter === 1 && contactList[0].contact.id === contactId){
+    else if(checkedCounter === 1 && userList[0].contact.id === contactId){
         return contactId;
     }
     else{
@@ -63,10 +63,10 @@ function CheckOneContact(contactList,searchList){
     }
 }
 
-function checkDuplicate(contactList,contact){
+function checkDuplicate(userList,contact){
     let duplicate = false;
-    for (let i in contactList){
-        if(contactList[i].contact._id === contact._id){
+    for (let i in userList){
+        if(userList[i].contact._id === contact._id){
             duplicate = true;
             return duplicate
         }

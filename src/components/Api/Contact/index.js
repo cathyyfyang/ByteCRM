@@ -1,1 +1,0 @@
-export {GetContact, GetContactByUserId, GetAllContacts, UpdateContact, removeContact, createContact } from './Contact';

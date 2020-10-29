@@ -31,22 +31,22 @@ class InfoBody extends React.Component {
                 ? <Loading variant="block" />
                 : (
                   <>
-                        <div className="infoBody__contactsAvatar--init">
-                            <Avatar variant="large">
-            {`${dataPack.data.firstName[0]}${dataPack.data.lastName[0]}`}
-          </Avatar>
-                          </div>
-                        <div className="infoBody__name">
-                            {' '}
-                            {`${dataPack.data.firstName} ${dataPack.data.lastName}`}
-                            {' '}
-                          </div>
-                        <div className="infoBody__jobTitle">
-                            {' '}
-                            {`${dataPack.data.jobTitle} ${companyName}`}
-                            {' '}
-                          </div>
-                      </>
+                    <div className="infoBody__contactsAvatar--init">
+                      <Avatar variant="large">
+                        {`${dataPack.data.firstName[0]}${dataPack.data.lastName[0]}`}
+                      </Avatar>
+                    </div>
+                    <div className="infoBody__name">
+                      {' '}
+                      {`${dataPack.data.firstName} ${dataPack.data.lastName}`}
+                      {' '}
+                    </div>
+                    <div className="infoBody__jobTitle">
+                      {' '}
+                      {`${dataPack.data.jobTitle} ${companyName}`}
+                      {' '}
+                    </div>
+                  </>
                 )}
             </>
           )

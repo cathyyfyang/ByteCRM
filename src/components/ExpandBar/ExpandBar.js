@@ -97,11 +97,11 @@ class ExpandBar extends React.Component {
                   >
                     {disabled && showHint
                       ? (
-                            <div className="expandBar__container__right__hint">
-                                <HintBox variant="right">
-                                    {hintMessage}
-                                  </HintBox>
-                              </div>
+                        <div className="expandBar__container__right__hint">
+                          <HintBox variant="right">
+                            {hintMessage}
+                          </HintBox>
+                        </div>
                       )
                       : ''}
                     + Add

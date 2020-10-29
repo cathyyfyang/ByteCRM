@@ -22,8 +22,8 @@ function Header(props) {
               >
                 <img
                   className="ArrowIcon"
-src={ArrowIcon_Right}
-alt="Close"
+                  src={ArrowIcon_Right}
+                  alt="Close"
                 />
               </button>
             )

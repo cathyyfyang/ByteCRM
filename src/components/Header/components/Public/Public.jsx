@@ -4,6 +4,7 @@ import SmallLogo from '../../../../img/Logo/smalllogo.png';
 import {
   CONTACT_BASE_URL,
   COMPANY_BASE_URL,
+  ACTIVITY_FEED_BASE_URL,
   ABOUTUS_BASE_URL,
   CONTACTUS_BASE_URL,
 } from '../../../Routes/URLMap';
@@ -19,6 +20,9 @@ const Public = () => (
     </HeaderNavLink>
     <HeaderNavLink path={COMPANY_BASE_URL}>
       Companies
+    </HeaderNavLink>
+    <HeaderNavLink path={ACTIVITY_FEED_BASE_URL}>
+      Activity Feed
     </HeaderNavLink>
     <HeaderNavLink path={ABOUTUS_BASE_URL}>
       About

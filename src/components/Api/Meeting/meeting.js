@@ -24,6 +24,15 @@ async function GetMeetings(contactId) {
     return data;
 }
 
+async function GetTodayMeetingsByUserId(userId) {
+  const serverUrl = `http://localhost:3000/api/meetings/user/${userId}`;
+  const response = await fetch(serverUrl, {
+      method: 'GET',
+  });
+  const data = response.json();
+  return data;
+}
+
 async function UpdateMeeting(meetingId, body) {
     const serverUrl = `http://localhost:3000/api/meetings/${meetingId}`;
     console.log(body);
@@ -78,5 +87,5 @@ async function RemoveContacts(contactId, meetingId) {
 }
 
 export {
- GetMeetings, UpdateMeeting, PostMeeting, DeleteMeetingLog, UpdateContacts, RemoveContacts,
+ GetMeetings, GetTodayMeetingsByUserId, UpdateMeeting, PostMeeting, DeleteMeetingLog, UpdateContacts, RemoveContacts,
 };

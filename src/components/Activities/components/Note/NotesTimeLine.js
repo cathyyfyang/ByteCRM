@@ -126,7 +126,7 @@ class NotesTimeLine extends React.Component {
         />
       </div>
     );
-}
+  }
 }
 
 export default NotesTimeLine;

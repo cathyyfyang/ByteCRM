@@ -6,6 +6,7 @@ import ContactList from '../Contact/ContactList';
 import ContactMain from '../Contact/ContactMain';
 import CompanyList from '../Company/CompanyList';
 import CompanyMain from '../Company/CompanyMain';
+import ActivityFeed from '../ActivityFeed';
 import RegForm from '../User/RegForm/Register';
 import Login from '../User/LogIn/LogIn';
 import About from '../AboutUs';
@@ -15,6 +16,7 @@ import ProtectedRoute from './components/ProtectedRoute';
 import {
   COMPANY_BASE_URL,
   CONTACT_BASE_URL,
+  ACTIVITY_FEED_BASE_URL,
   LOGIN_URL,
   REG_BASE_URL,
   ABOUTUS_BASE_URL,
@@ -31,6 +33,8 @@ const Routes = () => (
       <ProtectedRoute exact path={`${CONTACT_BASE_URL}/:id`} component={ContactMain} />
       <ProtectedRoute exact path={COMPANY_BASE_URL} component={CompanyList} />
       <ProtectedRoute exact path={`${COMPANY_BASE_URL}/main`} component={CompanyMain} />
+      <ProtectedRoute exact path={ACTIVITY_FEED_BASE_URL} component={ActivityFeed} />
+      <ProtectedRoute exact path={`${ACTIVITY_FEED_BASE_URL}/:id`} component={ActivityFeed} />
       <Route exact path={ABOUTUS_BASE_URL} component={About} />
       <Route exact path={CONTACTUS_BASE_URL} component={Contactus} />
     </Switch>

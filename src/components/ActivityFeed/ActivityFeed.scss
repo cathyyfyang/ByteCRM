@@ -1,0 +1,20 @@
+.activity-feed-container {
+  padding: 10px;
+}
+
+.activity-feed-header {
+  padding: 20px;
+}
+
+.activity-feed-body {
+  display: flex;
+  flex-wrap: wrap;
+
+  &--left {
+    width: 50%;
+  }
+
+  &--right {
+    width: 50%;
+  }
+}

@@ -7,8 +7,8 @@ const GetCompanyByCode = (id) => {
   return response;
 };
 
-async function GetCompany(code) {
-  const serverUrl = `${apiFetch}/api/companies/${code}`;
+async function GetCompany(id) {
+  const serverUrl = `${apiFetch}/api/companies/${id}`;
   const response = await fetch(serverUrl, {
     method: 'GET',
   });

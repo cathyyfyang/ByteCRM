@@ -46,11 +46,11 @@ class Detail extends React.Component {
       jobTitle = `${contact.jobTitle} at`;
     }
 
-    const createModal = new Modal('Email', 'Email', <EmailModal />);
+    const createModal = new Modal('Email', 'Email', EmailModal);
 
     return (
       <ModalContext.Consumer>
-        { (value) => (
+        { (modalController) => (
           <div className="relatedContacts">
             <div className="relatedContactsWrapper">
               <div className="relatedContactsWrapper__header">
@@ -75,7 +75,7 @@ class Detail extends React.Component {
                 <div className="relatedContactsWrapper__activityContainer__icon">
                   <FontAwesomeIcon icon={faEnvelope} />
                 </div>
-                <div className="relatedContactsWrapper__activityContainer__activity" onClick={() => value.open(createModal)}>{contact.email}</div>
+                <div className="relatedContactsWrapper__activityContainer__activity" onClick={() => modalController.open(createModal)}>{contact.email}</div>
               </div>
               <div className="relatedContactsWrapper__activityContainer">
                 <div className="relatedContactsWrapper__activityContainer__icon">

@@ -27,13 +27,13 @@ class Detail extends React.Component {
         let newCard = this.state.card;
         newCard[key] = value;
         const body = newCard;
+        this.setState({
+            card: newCard,
+        })
         const response = UpdateDeal(newCard.id,body);
         response.then((response) =>{
-            console.log(response)
             if(response.statusText === 'OK'){
-                this.setState({
-                    card: response.data,
-                })
+                console.log("change successfully");
             }
             else{
                 console.log("something wrong");
@@ -62,7 +62,7 @@ class Detail extends React.Component {
 
     render() {
         const { card, showRemoveModal } = this.state;
-       
+
         return (
             <div className="dealsDetail">
                 <div className="dealsDetail__wrapper">

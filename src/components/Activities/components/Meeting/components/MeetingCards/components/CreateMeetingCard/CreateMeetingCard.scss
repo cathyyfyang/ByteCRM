@@ -1,6 +1,15 @@
+@import '../../../../../../../../style/variable.scss';
+
 .createMeetingCard{
     display: flex;
     flex-direction: column;
+
+    &__title{
+        color: $primary-color;
+        font-size: 16px;
+        padding: 10px 0px;
+        font-weight: bold;
+    }
 
     &__content{
         display: inline-block;

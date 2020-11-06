@@ -4,10 +4,12 @@ import Editor from '../../../../../../../../Style/Editor/Editor';
 
 const EmailInput = ({
   children,
+  handleEditorChange
 }) => (
 
   <div className="EmailInput">
-    <Editor />
+    <Editor   placeholder="Describe the Email"
+              handleEditorChange = {handleEditorChange}/>
   </div>
 
 );

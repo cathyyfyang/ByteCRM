@@ -24,6 +24,21 @@ class EmailModal extends React.Component {
       items,
       contacts,
     };
+    this.handleEditorChange = this.handleEditorChange.bind(this);
+  }
+
+  handleEditorChange(text) {
+    if (this.checkValidation(text) && this.state.contacts.length > 0) {
+      this.setState({
+        description: text,
+        btnDisable: false,
+      });
+    } else {
+      this.setState({
+        description: text,
+        btnDisable: true,
+      });
+    }
   }
 
   render() {
@@ -36,7 +51,7 @@ class EmailModal extends React.Component {
         <EmailHeader
           contacts={contacts}
         />
-        <EmailInput />
+        <EmailInput handleEditorChange={this.handleEditorChange} />
         <EmailSendBar />
       </div>
     );

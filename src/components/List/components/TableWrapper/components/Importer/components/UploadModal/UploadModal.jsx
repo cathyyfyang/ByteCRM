@@ -25,15 +25,12 @@ export default class UploadModal extends Component {
 
   render() {
     return (
-      <div className="modal-wrapper">
-        <div className="modal">
+      <div className="wrapper">
+        <div className="body">
           <Uploader getNewData={this.getNewData} />
-          <div className="modal-operator">
-            <button className="modal-operator-close" onClick={this.closeModal}>
+          <div className="operator">
+            <button className="operator-close" onClick={this.closeModal}>
               Cancel
-            </button>
-            <button className="modal-operator-confirm" onClick={this.upload}>
-              Upload
             </button>
           </div>
         </div>

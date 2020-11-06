@@ -8,10 +8,10 @@ const testEmailAddr = (str) => {
   return reg.test(String(str).toLowerCase());
 };
 
-// for mm/dd/yyyy format
+// for dd/mm/yyyy format
 const testDate = (str) => {
   const reg = /^(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\d\d$/;
-  return reg.test(str);
+  return reg.test(String(str));
 };
 
 const testEmptyString = (str) => str === undefined || str === '';

@@ -58,7 +58,7 @@ class PageWrapper extends React.Component {
 
         {this.props.tabs.map((tab) =>
           this.state.showLoading ? (
-            <Loading variant={"full page"} />
+            <Loading key={"loading"+tab.id} variant={"full page"} />
           ) : (
             activeTab === tab.id && (
               <div key="table">

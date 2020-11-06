@@ -25,6 +25,7 @@ import {
   processData,
   makeNewRow,
   remove,
+  handleCsv
 } from "../../../../../../lib/tableLibs/dataOperation";
 
 class EnhancedTable extends Component {
@@ -47,6 +48,35 @@ class EnhancedTable extends Component {
     } else {
       this.getAllCompanies();
       this.changeLoadingVisible(false);
+    }
+  }
+
+  componentDidUpdate(prevProps) {
+    const { CSVData } = this.props;
+    if (CSVData !== prevProps.CSVData) {
+      const dataToAdd = handleCsv(CSVData, this.props.type);
+      console.log("EnhancedTable -> componentDidUpdate -> dataToAdd", dataToAdd)
+      if (dataToAdd.length === 0) {
+        alert("You may have imported a wrong file!");
+      } else {
+        this.changeLoadingVisible(true);
+        for (const item of dataToAdd) {
+          if (this.props.type === "contact") {
+            createContact(item);
+          } else if (this.props.type === "company") {
+            AddCompany(item);
+          }
+        }
+        setTimeout(() => {
+          if (this.props.type === "contact") {
+            this.getAllContacts();
+            this.changeLoadingVisible(false);
+          } else {
+            this.getAllCompanies();
+            this.changeLoadingVisible(false);
+          }
+        }, 1000);
+      }
     }
   }
 

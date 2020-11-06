@@ -1,9 +1,9 @@
 @import "../../../../../../../../style/variable.scss";
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,500,700,900);
 
 
 body {
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;   
+  font-family: 'Roboto';   
 }
 
 .naked__button_contact {

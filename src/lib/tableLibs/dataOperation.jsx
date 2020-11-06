@@ -215,7 +215,7 @@ const processData = (data, type) => {
     return {
       name: data.fullName,
       contactID: data.id,
-      companyID: data.company ? data.company.code : undefined,
+      companyID: data.company ? data.company.id : undefined,
       phoneNumber: data.phoneNo,
       email: data.email,
       contactOwner: newOwner || data.contactOwner,

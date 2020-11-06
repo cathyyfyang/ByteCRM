@@ -1,4 +1,5 @@
 import api from '../../../lib/api';
+import {apiFetch} from '../../../lib/api';
 
 const GetTasks = (contactId) => {
   const response = api.get(`/api/tasks/${contactId}`);
@@ -16,7 +17,7 @@ async function PostTask(task) {
 }
 
 async function UpdateTask(taskId, body) {
-  const serverUrl = `http://localhost:3000/api/tasks/${taskId}`;
+  const serverUrl = `${apiFetch}/api/tasks/${taskId}`;
   const response = await fetch(serverUrl, {
     method: 'PUT',
     headers: {
@@ -29,7 +30,7 @@ async function UpdateTask(taskId, body) {
 }
 
 async function DeleteCreateTask(taskId) {
-  const serverUrl = `http://localhost:3000/api/tasks/${taskId}`;
+  const serverUrl = `${apiFetch}/api/tasks/${taskId}`;
   const response = await fetch(serverUrl, {
     method: 'DELETE',
     headers: {
@@ -44,12 +45,12 @@ async function DeleteCreateTask(taskId) {
 }
 
 async function UpdateAssignedToUser(userId, taskId) {
-  const response = api.put(`http://localhost:3000/api/tasks/${taskId}/assignedToUser/${userId}`);
+  const response = api.put(`/api/tasks/${taskId}/assignedToUser/${userId}`);
   return response;
 }
 
 async function RemoveAssignedToUser(userId, taskId) {
-  const response = api.delete(`http://localhost:3000/api/tasks/${taskId}/assignedToUser/${userId}`);
+  const response = api.delete(`/api/tasks/${taskId}/assignedToUser/${userId}`);
   return response;
 }
 

@@ -15,7 +15,6 @@ class Activities extends React.Component {
       // { key: 'Activity', value: 'Activity', activity: <div>Activity</div> },
       { key: 'Notes', value: 'Notes', activity: <NotesTimeLine relatedTo={relatedTo} associatedContacts={associatedContacts} /> },
       { key: 'Emails', value: 'Emails', activity: <EmailPage contact={contact} associatedContacts={associatedContacts} /> },
-      { key: 'Calls', value: 'Calls', activity: <CallPanel /> },
       { key: 'Tasks', value: 'Tasks', activity: <TaskPage relatedTo={relatedTo} contact={contact} associatedContacts={associatedContacts} /> },
       { key: 'Meetings', value: 'Meetings', activity: <MeetingPage contact={contact} associatedContacts={associatedContacts} /> },
     ];

@@ -4,10 +4,14 @@ import EmailFunctionBar from './components/EmailFunctionBar';
 import EmailHeader from './components/EmailHeader';
 import EmailInput from './components/EmailInput';
 import EmailSendBar from './components/EmailSend';
+import store from '../../../../../../../store';
 
 class EmailModal extends React.Component {
   constructor(props) {
     super(props);
+    const { contact } = store.getState().contact;
+    let contacts = [];
+    contact ? contacts.push(contact) : contacts = [];
     const items = [
       { key: 'Templates', value: 'Templates' },
       { key: 'Sequences', value: 'Sequences' },
@@ -16,14 +20,35 @@ class EmailModal extends React.Component {
       { key: 'Quotes', value: 'Quotes' },
     ];
 
-    const contacts = [
-      { key: 'John@gmail.com', email: 'John@gmail.com', value: 'John Wick' },
-      { key: 'John222@gmail.com', email: 'John222@gmail.com', value: 'John 1111 Wick' },
-    ];
     this.state = {
       items,
       contacts,
     };
+    this.handleEditorChange = this.handleEditorChange.bind(this);
+  }
+
+  checkValidation(text) {
+    const { contacts } = this.state;
+    const checkInput = text.replaceAll(' ', '').replaceAll('<br>', '').replaceAll('<p></p>', '');
+    if (contacts.length >= 1 && checkInput !== '') {
+      return true;
+    }
+
+    return false;
+  }
+
+  handleEditorChange(text) {
+    if (this.checkValidation(text) && this.state.contacts.length > 0) {
+      this.setState({
+        description: text,
+        btnDisable: false,
+      });
+    } else {
+      this.setState({
+        description: text,
+        btnDisable: true,
+      });
+    }
   }
 
   render() {
@@ -31,13 +56,12 @@ class EmailModal extends React.Component {
     return (
       <div className="emailModal">
         <EmailFunctionBar
-
           items={items}
         />
         <EmailHeader
           contacts={contacts}
         />
-        <EmailInput />
+        <EmailInput handleEditorChange={this.handleEditorChange} />
         <EmailSendBar />
       </div>
     );

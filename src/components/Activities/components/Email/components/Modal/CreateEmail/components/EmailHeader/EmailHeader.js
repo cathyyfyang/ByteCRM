@@ -65,7 +65,7 @@ class EmailHeader extends React.Component {
                 key={item.key}
                 onClick={() => this.onDeleteReceiversButton(item.email)}
               >
-                {item.value}
+                {item.email}
               </ReceiverTag>
             ))}
           </HeaderItem>

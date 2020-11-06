@@ -7,14 +7,6 @@ const GetCompanyByCode = (id) => {
   return response;
 };
 
-async function GetCompany(code) {
-  const serverUrl = `${apiFetch}/api/companies/${code}`;
-  const response = await fetch(serverUrl, {
-    method: 'GET',
-  });
-  const data = response.json();
-  return data;
-}
 
 async function GetAllCompanies() {
   const url = new URL(`${apiFetch}/api/companies`);
@@ -85,5 +77,5 @@ async function MultiRefChange(id, body) {
 }
 
 export {
-  GetCompanyByCode, GetAllCompanies, GetCompany, AddCompany, UpdateCompany, GetCompanyByUserId, DeleteCompany, MultiRefChange,
+  GetCompanyByCode, GetAllCompanies, AddCompany, UpdateCompany, GetCompanyByUserId, DeleteCompany, MultiRefChange,
 };

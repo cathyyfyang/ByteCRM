@@ -30,6 +30,112 @@ const LEAD_STATUS_BACK = {
   "Bad timing": 8,
 };
 
+/* ====================================CSV========================================== */
+function handleCsv(text, type) {
+  // empty table
+  if (text.split("\n").length < 2) {
+    return [];
+  }
+  const fields = text.split("\n")[0].split(",");
+  const data = text.split("\n").slice(1);
+  const result = [];
+  if (type === "contact") {
+    // wrong table
+    if (
+      fields.includes("city") ||
+      fields.includes("country") ||
+      fields.includes("industry") ||
+      fields.includes("last logged call date")
+    ) {
+      return [];
+    }
+    for (let item of data) {
+      item = item.split(",");
+      let cur = {};
+      for (let i = 0; i < fields.length; i++) {
+        if (fields[i].localeCompare("name") === 0) {
+          if (!testEmptyString(item[i]) && item[i].split(" ").length > 1) {
+            cur.firstName = item[i].split(" ")[0];
+            cur.lastName = item[i].split(" ")[item[i].split(" ").length - 1];
+          } else {
+            break;
+          }
+        } else if (fields[i].localeCompare("email") === 0) {
+          if (testEmailAddr(item[i])) {
+            cur.email = item[i];
+          } else {
+            break;
+          }
+        } else if (fields[i].localeCompare("phone number") === 0) {
+          if (item[i].startsWith("61") && testPhoneNum("+" + item[i])) {
+            cur.phoneNo = "+" + item[i];
+          } else {
+            const phoneNum = "0" + item[i];
+            testPhoneNum(phoneNum) && (cur.phoneNo = phoneNum);
+          }
+        } else if (fields[i].localeCompare("last activity date") === 0 && testDate(item[i])) {
+          cur.lastActivityDate = item[i];
+        } else if (fields[i].localeCompare("create date") === 0 && testDate(item[i])) {
+          cur.createDate = item[i];
+        } else if (
+          fields[i].localeCompare("lead status") === 0 &&
+          Object.values(LEAD_STATUS).includes(item[i])
+        ) {
+          cur.leadStatus = item[i];
+        }
+      }
+      if (cur.email && cur.firstName && cur.lastName) {
+        cur.createDate = getDate();
+        result.push(cur);
+      }
+    }
+  } else {
+    // wrong table
+    if (
+      fields.includes("lead status") ||
+      fields.includes("create date") ||
+      fields.includes("last activity date")
+    ) {
+      return [];
+    }
+    for (let item of data) {
+      item = item.split(",");
+      let cur = {};
+      for (let i = 0; i < fields.length; i++) {
+        if (fields[i].localeCompare("name") === 0) {
+          if (!testEmptyString(item[i])) {
+            cur.name = item[i];
+          } else {
+            break;
+          }
+        } else if (fields[i].localeCompare("phone number") === 0) {
+          if (item[i].startsWith("61") && testPhoneNum("+" + item[i])) {
+            cur.phoneNumber = "+" + item[i];
+          } else {
+            const phoneNum = "0" + item[i];
+            testPhoneNum(phoneNum) && (cur.phoneNumber = phoneNum);
+          }
+        } else if (
+          fields[i].localeCompare("last logged call date") === 0 &&
+          testDate(item[i])
+        ) {
+          cur.lastLoggedCallDate = item[i];
+        } else if (fields[i].localeCompare("city") === 0) {
+          cur.city = item[i];
+        } else if (fields[i].localeCompare("country") === 0) {
+          cur.country = item[i];
+        } else if (fields[i].localeCompare("industry") === 0) {
+          cur.industry = item[i];
+        }
+      }
+      if (cur.name) {
+        result.push(cur);
+      }
+    }
+  }
+  return result;
+}
+
 /* ====================================GET========================================== */
 function wrapUpData(rowData, type) {
   let data = JSON.parse(JSON.stringify(rowData));
@@ -244,4 +350,4 @@ function makeNewRow(newData, type) {
   }
 }
 
-export { getTable, processData, makeNewRow, remove };
+export { getTable, processData, makeNewRow, remove, handleCsv };

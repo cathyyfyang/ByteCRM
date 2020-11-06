@@ -3,6 +3,8 @@ import { faEnvelope, faPhoneAlt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import EmailModal from '../../../../../../../Activities/components/Email/components/Modal/CreateEmail';
 import { ModalContext } from '../../../../../../../Modal/components/ModalContext';
+import { addContactAction } from '../../../../../../../../action';
+import store from '../../../../../../../../store';
 import Modal from '../../../../../../../../js/Modal';
 import RemoveBtn from '../../../../../../../RemoveBtn';
 import NavigationButton from '../../../../../../../NavigationButton';
@@ -19,24 +21,30 @@ class Detail extends React.Component {
     this.handleModalToggle = this.handleModalToggle.bind(this);
     this.onClickConfirmBtn = this.onClickConfirmBtn.bind(this);
     this.onClickCancelBtn = this.onClickCancelBtn.bind(this);
+    this.onClickEmailLink = this.onClickEmailLink.bind(this);
   }
 
   handleModalToggle() {
     this.setState((prevState) => ({
       showRemoveModal: !prevState.showRemoveModal,
     }));
-  }
+  };
 
   onClickConfirmBtn() {
     this.props.handleRemoveRef(this.props.contact.id, this.props.company.id);
     this.setState({
       showRemoveModal: false,
     });
+  };
+
+  onClickEmailLink() {
+    const action = addContactAction(this.props.contact);
+    store.dispatch(action);
   }
 
   onClickCancelBtn() {
     this.handleModalToggle();
-  }
+  };
 
   render() {
     const { showRemoveModal } = this.state;
@@ -75,7 +83,10 @@ class Detail extends React.Component {
                 <div className="relatedContactsWrapper__activityContainer__icon">
                   <FontAwesomeIcon icon={faEnvelope} />
                 </div>
-                <div className="relatedContactsWrapper__activityContainer__activity" onClick={() => modalController.open(createModal)}>{contact.email}</div>
+                <div className="relatedContactsWrapper__activityContainer__activity" onClick={() => {
+                  modalController.open(createModal);
+                  this.onClickEmailLink();
+                }}>{contact.email}</div>
               </div>
               <div className="relatedContactsWrapper__activityContainer">
                 <div className="relatedContactsWrapper__activityContainer__icon">

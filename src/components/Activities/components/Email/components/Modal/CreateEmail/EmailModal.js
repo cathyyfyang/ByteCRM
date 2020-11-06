@@ -27,6 +27,16 @@ class EmailModal extends React.Component {
     this.handleEditorChange = this.handleEditorChange.bind(this);
   }
 
+  checkValidation(text) {
+    const { contacts } = this.state;
+    const checkInput = text.replaceAll(' ', '').replaceAll('<br>', '').replaceAll('<p></p>', '');
+    if (contacts.length >= 1 && checkInput !== '') {
+      return true;
+    }
+
+    return false;
+  }
+
   handleEditorChange(text) {
     if (this.checkValidation(text) && this.state.contacts.length > 0) {
       this.setState({

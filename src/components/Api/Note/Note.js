@@ -1,7 +1,8 @@
 import api from '../../../lib/api';
+import { apiFetch } from '../../../lib/api';
 
 async function GetNoteByRelatedToId(relatedToId) {
-  const serverUrl = `http://localhost:3000/api/notes/relatedTo/${relatedToId}`;
+  const serverUrl = `${apiFetch}/api/notes/relatedTo/${relatedToId}`;
   const response = await fetch(serverUrl, {
     method: 'GET',
   });
@@ -9,12 +10,12 @@ async function GetNoteByRelatedToId(relatedToId) {
 }
 
 const GetAllAssociatedNotes = (contacts) => {
-  const response = api.get(`http://localhost:3000/api/notes/contacts/${contacts}`);
+  const response = api.get(`api/notes/contacts/${contacts}`);
   return response;
 };
 
 async function UpdateNote(noteId, body) {
-  const serverUrl = `http://localhost:3000/api/notes/${noteId}`;
+  const serverUrl = `${apiFetch}/api/notes/${noteId}`;
   console.log(body);
   const response = await fetch(serverUrl, {
     method: 'PUT',
@@ -27,7 +28,7 @@ async function UpdateNote(noteId, body) {
 }
 
 async function AddNote(body) {
-  const serverUrl = 'http://localhost:3000/api/notes';
+  const serverUrl = `${apiFetch}/api/notes`;
   const response = await fetch(serverUrl, {
     method: 'POST',
     headers: {
@@ -44,7 +45,7 @@ async function AddNote(body) {
 }
 
 async function DeleteNote(noteId) {
-  const serverUrl = `http://localhost:3000/api/notes/${noteId}`;
+  const serverUrl = `${apiFetch}/api/notes/${noteId}`;
   const response = await fetch(serverUrl, {
     method: 'DELETE',
     headers: {

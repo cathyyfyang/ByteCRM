@@ -59,7 +59,6 @@ class NotesTimeLine extends React.Component {
 
   sortCardsArray() {
     const { cardsList } = this.state;
-    console.log(cardsList)
     const newCardsArray = shuffleCards(cardsList);
     this.setState({
       cardsArray: newCardsArray,

@@ -1,5 +1,6 @@
 import api from '../../../lib/api';
 import {apiFetch} from '../../../lib/api';
+
 async function PostMeeting(body){
     const serverUrl = `${apiFetch}/api/meetings`;
     const response = await fetch(serverUrl, {
@@ -23,27 +24,14 @@ async function GetMeetings(contactId) {
     return response;
 }
 
-/*async function GetMeetings(contactId) {
-    const serverUrl = `http://localhost:3000/api/meetings/${contactId}`;
-    const response = await fetch(serverUrl, {
-        method: "GET"
-    });
-    const data = response.json();
-    return data;
-}*/
 
 const GetMultiContactsMeetings = (contacts) => {
     const response = api.get(`/api/meetings/contacts/${contacts}`);
     return response;
 }
 
-async function UpdateEmail(emailId, body) {
-    const response = api.put(`/api/emails/${emailId}`)
-    return response;
-  }
 
 async function UpdateMeeting(meetingId, body) {
-    //const serverUrl = `http://localhost:3000/api/meetings/${meetingId}`;
     const serverUrl = `${apiFetch}/api/meetings/${meetingId}`
     console.log(body);
     const response = await fetch(serverUrl, {

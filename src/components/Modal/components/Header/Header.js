@@ -5,10 +5,7 @@ import './Header.scss';
 
 function Header(props) {
   const { hide, name } = props;
-  let hideClassName = 'Header__left__icon ';
-  if (hide){
-    hideClassName += 'Header__left__icon--hide'
-  }
+ 
   return (
     <div className="Header">
       <div className="Header__left">

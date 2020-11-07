@@ -2,9 +2,7 @@ import React from 'react';
 import Tooltip from '@material-ui/core/Tooltip';
 import { withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
-import Grid from '@material-ui/core/Grid';
 import { getWeekDay } from '../../../../lib/date';
-import Text from '../../Text';
 import './TimeStamp.scss';
 
 const useStyles = (theme) => ({

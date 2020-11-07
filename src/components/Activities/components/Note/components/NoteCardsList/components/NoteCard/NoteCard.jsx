@@ -1,5 +1,4 @@
 import React from 'react';
-// import CommentBox from './components/CommentBox';
 import NoteBody from './components/NoteBody';
 import CreatedBy from './components/CreatedBy';
 
@@ -43,7 +42,7 @@ class NoteCard extends React.Component {
 
   render() {
     const {
-      cardId, content, comments, createdBy,
+      cardId, content, createdBy,
     } = this.props.card;
 
     return (
@@ -55,11 +54,7 @@ class NoteCard extends React.Component {
         />
         <CreatedBy
           createdBy={createdBy.fullName}
-        />
-        {/* <CommentBox
-          comments={comments}
-          onCommentChange={this.onCommentChange}
-        />             */}
+        />       
       </div>
     );
   }

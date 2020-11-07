@@ -15,7 +15,6 @@ class Header extends React.Component {
   componentDidMount() {
     store.subscribe(() => {
       const { reload, user } = store.getState().user;
-      console.log(user);
       if (reload) {
         this.setState({
           user: user,

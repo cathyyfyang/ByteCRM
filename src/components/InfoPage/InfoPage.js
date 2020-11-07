@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import {
-  faEnvelope, faEdit, faPhoneAlt, faCalendarAlt, faPlus, faTasks, faUser, faBuilding,
-} from '@fortawesome/free-solid-svg-icons';
+  faEnvelope, faEdit, faPhoneAlt, faCalendarAlt, faPlus, faTasks } from '@fortawesome/free-solid-svg-icons';
 import BasicInfo from './components/BasicInfo';
 import DetailInfo from './components/DetailInfo';
 import NoteModal from '../Activities/components/Note/components/NoteModal';

@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import './DetailInfo.scss';
 import FormatData from '../../services/FormatData';
 import AboutSection from './components/About';

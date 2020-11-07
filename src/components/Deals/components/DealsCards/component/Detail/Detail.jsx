@@ -33,10 +33,10 @@ class Detail extends React.Component {
         const response = UpdateDeal(newCard.id,body);
         response.then((response) =>{
             if(response.statusText === 'OK'){
-                console.log("change successfully");
+              return true;
             }
             else{
-                console.log("something wrong");
+               return false;
             }
         })
     }

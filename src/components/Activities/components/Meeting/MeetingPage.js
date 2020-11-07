@@ -97,8 +97,6 @@ class MeetingPage extends React.Component {
         }
         data.then(response => {
             if (response.statusText === "OK") {
-                console.log("response.data");
-                console.log(response.data);
                 this.setState({
                     cardList: response.data,
                     reload:false,
@@ -111,23 +109,6 @@ class MeetingPage extends React.Component {
         }).then((cards) => {
             this.sortCardsArray(cards);
         });
-        //const meetings = GetMeetings(contact.id);
-        //const meetings = GetMeetings(this.id);
-        /*
-        meetings.then(meetingList => {
-            if (meetingList.length > 0) {
-                this.setState({
-                    cardList:meetingList,
-                    reload:false,
-                })
-                return meetingList;
-            }
-            else {
-                return null;
-            }
-        }).then((meetingList) => {
-            this.sortCardsArray(meetingList);
-        });*/
     }
 
     componentDidMount() {

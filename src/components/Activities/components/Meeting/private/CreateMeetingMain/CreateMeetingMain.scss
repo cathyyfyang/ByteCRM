@@ -8,7 +8,7 @@
     flex-wrap: wrap;
     width: 100%;
     min-height: 40px;
-    padding: 10px 10px;
+    padding: 0px 10px 10px 10px;
     
 
     &__container {
@@ -16,6 +16,7 @@
         flex-direction: column;
         margin-right:10%;
         height:100%;
+        margin-top: 10px;
 
         &__text {
             display: flex;

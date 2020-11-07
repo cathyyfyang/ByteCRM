@@ -26,7 +26,6 @@ class StageDropDown extends React.Component {
   }
 
   onChangeValue(value) {
-    console.log(value);
     this.setState({
       currentValue: value,
     });

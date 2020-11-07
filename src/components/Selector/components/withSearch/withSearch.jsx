@@ -1,13 +1,15 @@
 import React from 'react';
-import { SearchSelectsLocal, SearchSelectsRemote, ItemSelected } from '../../../../lib/Search';
-
-const currentUser = JSON.parse(localStorage.getItem('user'));
+import {
+  SearchSelectsLocal,
+  SearchSelectsRemote,
+  ItemSelected,
+} from '../../../../lib/Search';
 
 const withSearch = (Component) => {
   class Wrapper extends React.Component {
     constructor(props) {
       super(props);
-
+      const currentUser = JSON.parse(localStorage.getItem('user'));
       this.state = {
         error: null,
         currentUser,
@@ -67,42 +69,52 @@ const withSearch = (Component) => {
           ...prevState,
           loading: true,
         }));
-        response.then((response) => {
-          if (response.statusText === 'OK') {
-            let newSearchList = [];
-            if (localList) {
-              newSearchList = SearchSelectsRemote(newList, text.toUpperCase(), response.data);
-            } else {
-              newSearchList = response.data;
+        response
+          .then((response) => {
+            if (response.statusText === 'OK') {
+              let newSearchList = [];
+              if (localList) {
+                newSearchList = SearchSelectsRemote(
+                  newList,
+                  text.toUpperCase(),
+                  response.data
+                );
+              } else {
+                newSearchList = response.data;
+              }
+              let foundNewUser = false;
+              if (newSearchList.length >= 1) {
+                foundNewUser = true;
+                this.setState((prevState) => ({
+                  ...prevState,
+                  checkInput: !foundNewUser,
+                  searchList: newSearchList,
+                  textInputHint: newHint,
+                  loading: false,
+                }));
+              }
             }
-            let foundNewUser = false;
-            if (newSearchList.length >= 1) {
-              foundNewUser = true;
-              this.setState((prevState) => ({
-                ...prevState,
-                checkInput: !foundNewUser,
-                searchList: newSearchList,
-                textInputHint: newHint,
-                loading: false,
-              }));
-            }
-          }
-        }).catch((error) => {
-          this.setState((prevState) => ({
-            ...prevState,
-            loading: false,
-            checkInput: true,
-            textInputHint: 'No result found',
-          }));
+          })
+          .catch((error) => {
+            this.setState((prevState) => ({
+              ...prevState,
+              loading: false,
+              checkInput: true,
+              textInputHint: 'No result found',
+            }));
 
-          throw error;
-        });
+            throw error;
+          });
       }
     }
 
     render() {
       const {
-        error, loading, checkInput, textInputHint, searchList,
+        error,
+        loading,
+        checkInput,
+        textInputHint,
+        searchList,
       } = this.state;
 
       return (

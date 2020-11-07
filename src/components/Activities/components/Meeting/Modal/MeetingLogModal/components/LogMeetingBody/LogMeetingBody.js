@@ -8,7 +8,7 @@ import './LogMeetingBody.scss';
 const LogMeetingBody = (props)=>{
 
     return(
-        <div className ='MeetingInput'>
+        <div className ='logMeeting__body'>
             <Editor placeholder= 'Describe the Meeting'
                     handleEditorChange = {props.handleEditorChange}/>
         </div>

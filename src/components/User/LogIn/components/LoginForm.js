@@ -1,5 +1,4 @@
 import React from 'react';
-import axios from 'axios';
 import { withRouter } from 'react-router-dom';
 import api from '../../../../lib/api/api';
 import store from '../../../../store';
@@ -21,7 +20,6 @@ class LoginForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  // Toggle Password -> Show or Hide
   toggleShow = this.toggleShow.bind(this);
 
   toggleShow() {
@@ -158,7 +156,7 @@ class LoginForm extends React.Component {
           <br />
           <div className="errMsg">{this.state.passwordErrMsg}</div>
           <br />
-          <a className="linkBtn">Forgot my password</a>
+          <p className="linkBtn">Forgot my password</p>
           <br />
           <input id="rememberMe" className="checkBox" type="checkbox" />
           <label htmlFor="rememberMe" className="rmbMe">

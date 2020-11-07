@@ -153,8 +153,8 @@ class MeetingModal extends React.Component {
   render() {
     const { currentDate, currentTime,contactList,contact,user,btnDisable} = this.state;
     return (
-      <div className="meetingLogModal">
-        <div className="logMeetingModal__header">
+      <div className="logMeeting">
+        <div className="logMeeting__header">
           <Header currentDate={currentDate}
                   currentTime={currentTime}
                   contact = {contact}

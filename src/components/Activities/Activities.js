@@ -3,7 +3,6 @@ import TabBar from './components/TabBar';
 import EmailPage from './components/Email';
 import TaskPage from './components/Task';
 import NotesTimeLine from './components/Note';
-import CallPanel from './components/Calls/index';
 import './Activities.scss';
 import MeetingPage from './components/Meeting/MeetingPage';
 
@@ -26,7 +25,6 @@ class Activities extends React.Component {
   }
 
   handleOnclick(item) {
-    console.log(item.key);
     this.setState({
       currentActivity: item.key,
     });

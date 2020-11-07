@@ -4,9 +4,6 @@ import NoteBody from './components/CallBody';
 import CardMakerName from './components/CardMaker/index';
 
 class NoteCard extends React.Component {
-  constructor(props) {
-    super(props);
-  }
 
   render() {
     return (

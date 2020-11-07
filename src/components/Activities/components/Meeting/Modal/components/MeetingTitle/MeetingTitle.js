@@ -1,51 +1,20 @@
 import React from 'react';
-import TextField from '@material-ui/core/TextField';
+import './MeetingTitle.scss';
 
 
-/*export default function MeetingTitle() {
-    return(
-        <div className="border-bottom">
-            <TextField 
-                autoFocus
-                margin="dense"
-                id="name"
-                placeholder="what are you meeting for?"
-                type="meeting"
-                fullWidth
-            />
+
+const MeetingTitle = ({
+    onTitleChange,
+}) => {
+    return (
+        <div className="meetingTitle">
+            <input className="meetingTitle__input"
+                placeholder={"what are you meeting for"}
+                onChange={(event) => {
+                    onTitleChange(event.target.value);
+                }} />
         </div>
     );
-}*/
-
-class MeetingTitle extends React.Component{
-    constructor(props){
-        super(props);
-        //this.handleChange = this.handleChange.bind(this);
-    }
-
-
-    handleOnChange = event => {
-        //console.log('title');
-        //console.log(event.target.value);
-        this.props.onTitleChange(event.target.value);
-      };
-
-    render(){
-        return(
-            <div className="border-bottom">
-                <TextField 
-                    autoFocus
-                    margin="dense"
-                    id="name"
-                    placeholder="what are you meeting for?"
-                    type="meeting"
-                    fullWidth
-                    onChange={this.handleOnChange}
-                />
-            </div>
-        );
-
-    }
-} 
+}
 
 export default MeetingTitle;

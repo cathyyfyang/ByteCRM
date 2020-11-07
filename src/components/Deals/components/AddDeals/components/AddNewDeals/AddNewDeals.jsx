@@ -88,7 +88,7 @@ class AddNewDeals extends React.Component {
     }
 
     render() {
-        const { deal, user, error,showAssociate } = this.state;
+        const { deal, user, showAssociate } = this.state;
         let userList = [];
         userList.push(user);
         console.log(deal)

@@ -15,11 +15,15 @@
     &--contact{
         @extend .infoLink;
         border: solid 1px rgb(0, 164, 189);
+        border-radius: 0px 4px 4px 0px;
+        border-left-style: none;
     }
 
     &--company{
         @extend .infoLink;
         border: solid 1px rgb(0, 189, 165);
+        border-radius: 0px 4px 4px 0px;
+        border-left-style: none;
     }
 
     &__text{

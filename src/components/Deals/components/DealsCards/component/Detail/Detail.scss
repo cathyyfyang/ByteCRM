@@ -4,12 +4,11 @@
 .dealsDetail {
     border: 1px solid $border-color;
     width: 100%;
+    border-radius: 3px;
 
     &+& {
         margin-top: 15px;
     }
-
-
 
     &__wrapper {
         display: flex;
@@ -23,7 +22,6 @@
           }
 
         .dealsCard {
-
             &__name{
                 color: $secondary-color;
                 &:hover{

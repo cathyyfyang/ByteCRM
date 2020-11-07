@@ -24,8 +24,8 @@ const LogMeetingCardMain = ({
     userId,
     contactList,
 }) => (
-        <div className="meetingCardBody">
-            <div className='meetingCardBody__container'>
+        <div className="logMeeting__main">
+            <div className='logMeeting__main__container'>
                 <div className="cardLabel">
                     Contacted
                 </div>
@@ -37,32 +37,33 @@ const LogMeetingCardMain = ({
                             handleAddContact = {handleAddContact}
                             handleDeleteContact = {handleDeleteContact}/>
             </div>
-            <div className='meetingCardBody__container'>
+            <div className='logMeeting__main__container'>
                 <div className="cardLabel">
                     Date
                 </div>
-                <div className='meetingCardBody__container__picker'>
+                <div className='logMeeting__main__container__picker'>
                     <DatePicker defaultDate={currentDate}
                         onDateChange={onDateChange}/>
                 </div>
             </div>
-            <div className='meetingCardBody__container'>
+            <div className='logMeeting__main__container'>
                 <div className="cardLabel">
                     Time
                 </div>
-                <div className='meetingCardBody__container__picker'>
+                <div className='logMeeting__main__container__picker'>
                     <TimePicker defaultTime={transferTimeHHMM(currentTime)}
                         onTimeChange={onTimeChange} />
                 </div>
             </div>
-            <div className='meetingCardBody__container'>
+            <div className = "logMeeting__main__block"/>
+            <div className='logMeeting__main__container'>
             <div className="cardLabel">
               Duration
              </div>
             <DurationDropDown defaultValue={meetingDuration}
                           onDurationChange = {onDurationChange}/>
           </div>
-          <div className='meetingCardBody__container'>
+          <div className='logMeeting__main__container'>
             <div className="cardLabel">
               Outcome
              </div>

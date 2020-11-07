@@ -5,8 +5,8 @@ import TaskFollow from '../../../../../../../Modal/components/Private/TaskFollow
 
 
 const CreateMeetingFooter = (props) => (
-    <div className="meetingFooter">
-        <div className="meetingFooter__send">
+    <div className="createMeeting__footer">
+        <div className="createMeeting__footer__send">
             <Button size = 'small' 
                     variant = 'contained'
                     btnDisable = {props.btnDisable}
@@ -14,7 +14,7 @@ const CreateMeetingFooter = (props) => (
                 Save
             </Button>
         </div>
-        <div className="meetingFooter__taskFollow">
+        <div className="createMeeting__footer__taskFollow">
             <TaskFollow />
         </div>
     </div>

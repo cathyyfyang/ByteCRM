@@ -153,9 +153,11 @@ handleClickLogBtn(){
   render() {
     const { currentDate, currentTime,contactList,contact,user,btnDisable} = this.state;
     return (
-      <div className="meetingCreateModal">
-        <MeetingTitle onTitleChange = {this.handleTitleChange}
+      <div className= "createMeeting">
+          <div className= "createMeeting__title">
+          <MeetingTitle onTitleChange = {this.handleTitleChange}
                         currentTitle ={this.currentTitle}/>
+          </div>
         <Header currentDate={currentDate}
                   currentTime={currentTime}
                   contact = {contact}

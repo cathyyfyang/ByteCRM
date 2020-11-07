@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import './Modal.scss';
 import Draggable from 'react-draggable';
 import Header from './components/Header';
-import withModal from './components/withModal';
-import Note from '../Activities/components/Note/components/NoteModal';
 
 class Modal extends Component {
   constructor(props) {
